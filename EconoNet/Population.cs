@@ -23,4 +23,7 @@ public class Population
         }
         TickCount++;
     }
+    
+    public static PopulationBuilder Create()
+        => new();
 }
