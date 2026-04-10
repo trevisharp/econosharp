@@ -2,5 +2,5 @@ namespace Econonet.Behaviours;
 
 public interface IBehaviour
 {
-    bool Tick(Population pop);
+    bool Tick(Economy eco);
 }

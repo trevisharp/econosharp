@@ -4,7 +4,7 @@ using Utils;
 
 public class DefaultInitBehaviour(int population, int monetaryBase) : IBehaviour
 {
-    public bool Tick(Population pop)
+    public bool Tick(Economy eco)
     {
         var gen = new NormalGenerator(
             Random.Shared,
@@ -17,7 +17,7 @@ public class DefaultInitBehaviour(int population, int monetaryBase) : IBehaviour
             var money = gen.Next();
             totalMoney += money;
 
-            pop.People.Add(new Person {
+            eco.Population.Add(new Person {
                 Age = 18,
                 Happiness = gen.Next(),
                 Health = gen.Next(),
@@ -27,7 +27,7 @@ public class DefaultInitBehaviour(int population, int monetaryBase) : IBehaviour
         }
 
         var adjust = monetaryBase / totalMoney;
-        foreach (var person in pop.People)
+        foreach (var person in eco.Population)
             person.Money *= adjust;
 
         return false;

@@ -2,10 +2,10 @@ namespace Econonet;
 
 using Behaviours;
 
-public class Population
+public class Economy
 {
     public int TickCount { get; private set; } = 0;
-    public List<Person> People { get; private init; } = [];
+    public List<Person> Population { get; private init; } = [];
     public List<IBehaviour> Behaviours { get; private init; } = [];
 
     public void Tick()
@@ -24,6 +24,6 @@ public class Population
         TickCount++;
     }
     
-    public static PopulationBuilder Create()
+    public static EconomyBuilder Create()
         => new();
 }
