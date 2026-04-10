@@ -2,7 +2,7 @@ namespace Econonet.Behaviours;
 
 using Utils;
 
-public class DefaultInitBehaviour(int population, int monetaryBase) : IBehaviour
+public class DefaultInitBehaviour(int population, float monetaryBase) : IBehaviour
 {
     public bool Tick(Economy eco)
     {
